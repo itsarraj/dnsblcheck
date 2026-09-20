@@ -1,0 +1,25 @@
+[package]
+name = "dnsblcheck"
+version = "0.1.0"
+edition = "2021"
+description = "Checks whether a domain or IP is listed on real public DNS blacklists (Spamhaus ZEN and others) via real DNS queries"
+license = "MIT"
+authors = ["Animesh Raj <animesh080808@gmail.com>"]
+repository = "https://github.com/itsarraj/dnsblcheck"
+readme = "README.md"
+keywords = ["dns", "dnsbl", "spam", "blacklist", "cli"]
+categories = ["command-line-utilities"]
+
+[lib]
+name = "dnsblcheck"
+path = "src/lib.rs"
+
+[[bin]]
+name = "dnsblcheck"
+path = "src/main.rs"
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+anyhow = "1"
+tokio = { version = "1", features = ["full"] }
+hickory-resolver = "0.24"
